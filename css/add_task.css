@@ -263,7 +263,7 @@ body {
 #selectedContactsContainer {
   margin-top: 2px;
   width: 100%;
-  /*height: 200px;*/
+  height: 100px;
   overflow-y: auto;
 }
 
@@ -676,7 +676,7 @@ body {
 }
 
 .subtask-list {
-  height: 50px;
+  height: 110px;
   width: 100%;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -908,26 +908,38 @@ body {
 }
 
 /* Media queries */
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 1330px) {
+  #selectedContactsContainer {
+    height: 144px;
+  }
+
   .header-add-task {
     margin-left: 250px;
     transition: margin 0.5s ease-in-out;
   }
 
+  .clear-and-create-section {
+    right: 10px;
+  }
+
+  .required-legend {
+    left: 300px;
+  }
+
   .Add-task {
     display: flex;
     transition: margin 0.5s ease-in-out;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: 250px;
   }
 
   .Add-task-left {
-    width: 33vw;
+    width: 44vw;
     transition: margin 0.5s ease-in-out;
   }
 
   .Add-task-right {
-    width: 33vw;
+    width: 44vw;
     transition: margin 0.5s ease-in-out;
   }
 
@@ -984,7 +996,7 @@ body {
   }
 
   .prio-option-container h3 {
-    font-size: 1.8vw;
+    font-size: 1.6vw;
   }
 
   .category-container{
@@ -999,17 +1011,6 @@ body {
     width: 100%;
   }
 
-
-  #selectedContactsContainer {
-    width: 32.5vw;
-  }
-
-  .required-legend{
-    transition: all 0.5s ease-in-out;
-    position: fixed;
-    left: 22px;
-    bottom: 80px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1328,13 +1329,28 @@ body {
 }
 
 @media only screen and (max-width: 926px) {
+  .subtask-list {
+    height: 50px;
+  }
+
+  #selectedContactsContainer {
+    height: 100px;
+  }
+
   .header-add-task {
     margin-left: 15px;
     transition: margin 0.5s ease-in-out;
   }
 
+  .required-legend{
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+    left: 22px;
+    bottom: 80px;
+  }
+
   .Add-task {
-    margin-left: -80px;
+    margin-left: 8px;
     transition: margin 0.5s ease-in-out;
   }
 
