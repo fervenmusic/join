@@ -8,7 +8,7 @@
  * @global
  */
 let containerCount = 0;
-/*TEST*/
+
 /**
  * This function asynchronously retrieves the contacts.
  * If the user is logged in, it retrieves the contacts using the `getUserContacts` function.

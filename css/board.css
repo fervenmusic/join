@@ -75,7 +75,8 @@ body {
   gap: 32px;
 }
 
-.input-container, .input-container-search {
+.input-container,
+.input-container-search {
   position: relative;
   display: inline-block;
 }
@@ -196,6 +197,7 @@ body {
 }
 
 .board {
+  margin-bottom: 30px;
   margin-top: 15.5px;
   margin-left: 296px;
   display: flex;
@@ -374,6 +376,10 @@ body {
   line-height: 120%;
 }
 
+.description-input-modal {
+  height: 120px;
+}
+
 .assigned-to-container-modal {
   display: flex;
   flex-direction: column;
@@ -496,7 +502,7 @@ body {
 }
 
 .input-container-subtask-add-task-modal img {
-  padding-right: 8px;
+  margin-right: 8px;
 }
 
 .input-container-subtask-add-task-modal input:focus {
@@ -549,28 +555,28 @@ body {
 .due-date-input,
 .category-dropdown,
 .subtasks-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .required-info,
 .required-legend-modal {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .divider {
-    flex: 0 0 auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 0 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-title {
@@ -792,9 +798,9 @@ body {
 
 .Add-task-left-modal,
 .Add-task-right-modal {
-    flex: 1;
-    /*overflow: hidden;*/
-    box-sizing: border-box;
+  flex: 1;
+  /*overflow: hidden;*/
+  box-sizing: border-box;
 }
 
 #selectedContactsContainer {
@@ -811,12 +817,12 @@ body {
 .clear-and-create-section-modal {
   position: fixed;
   bottom: 35px;
-  width: 334px;
+  width: 100%;
   height: 56px;
   margin-top: 160px;
   right: 27.75px;
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 25px;
 }
@@ -892,7 +898,7 @@ body {
 
 .required-legend-modal {
   position: fixed;
-  bottom: 90px;
+  bottom: 20px;
   margin-left: 0px;
   width: 170px;
   height: 27px;
@@ -918,8 +924,8 @@ body {
   width: 32px;
   height: 32px;
   position: absolute;
-  top: 64px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
   border-radius: 50%;
   padding: 2px;
@@ -1278,6 +1284,8 @@ body {
 }
 
 .prio-option-container-add-task-modal {
+  margin-right: 2px;
+  margin-left: 2px;
   display: flex;
   gap: 10px;
 }
@@ -2114,8 +2122,8 @@ body {
   }
 
   .due-date-container-add-task-modal {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   .prio-container-add-task-modal {
@@ -2175,7 +2183,7 @@ body {
     padding-right: 5px;
   }
 
-  .card-modal-contacts{
+  .card-modal-contacts {
     width: 100%;
   }
 }
@@ -2183,26 +2191,26 @@ body {
 /* Media Queries */
 @media only screen and (max-width: 900px) {
   #taskModal {
-      width: 95%;
-      height: 90%;
+    width: 95%;
+    height: 90%;
   }
-  
+
   .divider {
-      display: none;
+    display: none;
   }
 
   .Add-task-content {
-      height: 100%;
-      flex-direction: column;
+    height: 100%;
+    display: block;
   }
 
   .Add-task-left-modal {
-      flex: none;
+    flex: none;
   }
 
   .Add-task-left-modal,
   .Add-task-right-modal {
-      width: 100%;
+    width: 100%;
   }
 
   .title-container,
@@ -2213,17 +2221,18 @@ body {
   .category-container,
   .subtasks-container,
   .clear-and-create-section-modal {
-      padding: 5px;
+    padding: 5px;
   }
 
-  #selectedContactsContainer{
-    margin-bottom: 0 !important; 
+  #selectedContactsContainer {
+    margin-bottom: 0 !important;
     width: 100%;
   }
 
   .clear-and-create-section-modal {
     margin-left: 0px;
-    margin-bottom: -21px;
+    position: relative;
+    justify-content: center;
   }
 
   .divider img {
@@ -2297,7 +2306,7 @@ body {
   #selectedContactsContainer {
     display: flex;
     flex-direction: row;
-    height: 42px;
+    height: 100%;
     margin-top: 10px;
     margin-bottom: 32px;
   }
@@ -2312,6 +2321,7 @@ body {
   }
 
   .input-container-subtask {
+    position: relative;
     flex-direction: column;
     align-items: stretch;
   }
@@ -2375,11 +2385,13 @@ body {
     padding: 12px 8px;
   }
 
-  .create-task-button-modal, .cancel-button-modal{
+  .create-task-button-modal,
+  .cancel-button-modal {
     width: 20vw;
   }
 
-  .create-task-button-modal h3, .cancel-button-modal h3{
+  .create-task-button-modal h3,
+  .cancel-button-modal h3 {
     font-size: 2.4vw;
     text-wrap: nowrap;
     display: flex;
@@ -2407,16 +2419,33 @@ body {
     display: none;
   }
 
+  #iconContainer {
+    justify-content: end;
+    /* margin-top: 10px; */
+    width: 70px;
+    right: 12px;
+    z-index: 1;
+  }
+
+  .icon-container-add-task-modal {
+    position: relative !important;
+    justify-content: end;
+    margin-top: 0px !important;
+    width: 70px;
+    right: 0px !important;
+    z-index: 1;
+  }
+
   #iconContainerEdit {
     position: absolute !important;
     justify-content: end !important;
     margin-top: 5px !important;
     width: 70px !important;
-    right: 20px !important;
+    right: 0px !important;
     z-index: 1 !important;
   }
 
-  .subImgContainer{
+  .subImgContainer {
     margin-top: 9px;
   }
 
@@ -2435,7 +2464,7 @@ body {
 
   .subtask-list {
     width: 100% !important;
-    height: 7vh;
+    height: 100% !important;
     overflow-y: scroll;
   }
 
@@ -2479,6 +2508,11 @@ body {
     font-size: 18px;
   }
 
+  .required-legend-modal {
+    position: relative;
+    bottom: -60px;
+  }
+
   .required-legend {
     position: fixed;
     bottom: 95px;
@@ -2498,7 +2532,7 @@ body {
     right: 5px !important;
   }
 
-  .input-container-subtask input{
+  .input-container-subtask input {
     height: 0px !important;
     padding: 12px 16px !important;
     width: 100% !important;
@@ -2621,7 +2655,7 @@ body {
     top: 50vh;
     position: absolute;
     width: 85%;
-    height: auto;
+    /*height: auto;*/
     padding: 20px;
     z-index: 9999;
   }
@@ -2752,7 +2786,7 @@ body {
     width: 0px;
   }
 
-  .card-modal-cont{
+  .card-modal-cont {
     gap: 2rem !important;
   }
 
@@ -2761,7 +2795,7 @@ body {
     z-index: 3 !important;
   }
 
-  .card-modal-subtask-maincontainer{
+  .card-modal-subtask-maincontainer {
     width: unset !important;
   }
 
@@ -2810,17 +2844,18 @@ body {
     right: 20px !important;
   }
 
-  .input-container-subtask input{
+  .input-container-subtask input {
     height: 0px !important;
     width: 100% !important;
     box-sizing: border-box;
   }
 
-  .card-modal-subtasks-container-headline, .card-modal-subtasks-container-headline_edit_mobile{
+  .card-modal-subtasks-container-headline,
+  .card-modal-subtasks-container-headline_edit_mobile {
     width: 100% !important;
   }
 
-  .input-container-subtask{
+  .input-container-subtask {
     height: unset !important;
   }
 
@@ -2834,16 +2869,17 @@ body {
   }
 }
 
-@media only  screen and (max-width: 530px) {
-  .create-task-button-modal h3, .cancel-button-modal h3{
+@media only screen and (max-width: 530px) {
+  .create-task-button-modal h3,
+  .cancel-button-modal h3 {
     display: none;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .button{
+  .button {
     padding: 12px 0px !important;
-  } 
+  }
 }
 
 @media only screen and (max-width: 1400px) {
@@ -2860,7 +2896,7 @@ body {
 
   .board-column-content {
     flex-direction: row;
-    width: 100%;
+    width: 68vw;
     gap: 10px;
     max-height: 500px;
     padding-right: 35px;
@@ -2905,7 +2941,7 @@ body {
   }
 
   .clear-and-create-section-modal {
-    margin-left: 70px;
+    /*margin-left: 70px;*/
   }
 
   .selected-contact {
@@ -2920,10 +2956,17 @@ body {
   .category-container,
   .subtasks-container,
   .clear-and-create-section-modal {
-      padding: 0px;
+    padding: 0px;
   }
 
-  .card-modal-priority-container, .prio-container, .card-modal-title-container, .description-container, .title-container-add-task, .card-modal-date, .due-date-input, .input-container {
+  .card-modal-priority-container,
+  .prio-container,
+  .card-modal-title-container,
+  .description-container,
+  .title-container-add-task,
+  .card-modal-date,
+  .due-date-input,
+  .input-container {
     width: 100% !important;
   }
 
@@ -2932,29 +2975,33 @@ body {
     box-sizing: border-box !important;
   }
 
-  .input-container-subtask{
-    height: 45px !important; 
+  .input-container-subtask {
+    height: 45px !important;
   }
 
-  .card-modal-cont{
+  .card-modal-cont {
     gap: 0.7rem;
   }
 
-  .card-modal-date{
+  .card-modal-date {
     gap: 0rem;
   }
 
-  .clear-and-create-section-modal, .required-legend-modal {
+  .clear-and-create-section-modal,
+  .required-legend-modal {
     margin-top: 0px;
   }
 
-  .card-modal-subtasks-container-headline, .card-modal-subtasks-container-headline_edit_mobile {
+  .card-modal-subtasks-container-headline,
+  .card-modal-subtasks-container-headline_edit_mobile {
     width: 100% !important;
   }
-  
+
   .prio-option-container {
-    width: 99% !important;
+    width: 100% !important;
     gap: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   .card-modal-contacts {
@@ -2993,7 +3040,7 @@ body {
     max-height: 500px;
     padding-right: 35px;
     overflow-x: scroll;
-    scrollbar-width: none;
+    scrollbar-width: thin;
     -ms-overflow-style: none;
   }
 
@@ -3014,7 +3061,7 @@ body {
 }
 
 @media only screen and (max-height: 1000px) {
-  .Add-task-content{
+  .Add-task-content {
     overflow-y: auto;
     overflow-x: hidden;
   }

@@ -97,7 +97,7 @@ function addTaskModalHTML(column) {
                     <div class="subtasks-add-task">Subtasks</div>
                     <div class="input-container-subtask-add-task-modal">
                         <input class="subtasks-input-add-task-modal" type="text" id="newSubtaskInput" placeholder="Add new subtask" id="subtask">
-                        <div id="iconContainer">
+                        <div id="iconContainer" class="icon-container-add-task-modal">
                             <img class="add-icon" src="img/Subtasks icons11.svg" alt="" />
                         </div>   
                     </div>

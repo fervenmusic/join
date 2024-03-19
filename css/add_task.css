@@ -1005,9 +1005,10 @@ body {
   }
 
   .required-legend{
-    left: 250px;
-    bottom: 107px;
     transition: all 0.5s ease-in-out;
+    position: fixed;
+    left: 22px;
+    bottom: 80px;
   }
 }
 
@@ -1053,7 +1054,7 @@ body {
 
   .assigned-to-container {
     width: 98% !important;
-    margin-top: 90px;
+    margin-top: 110px;
     margin-left: 5px;
   }
 
@@ -1118,7 +1119,7 @@ body {
     height: 212px;
     margin: 0 24px;
   }
-
+/*
   .due-date,
   .prio,
   .description,
@@ -1126,7 +1127,7 @@ body {
   .assigned-to,
   .category {
     font-size: 16px;
-  }
+  }*/
 
   .due-date-container {
     width: 100%;
@@ -1183,11 +1184,11 @@ body {
   .category-container {
     width: 100%;
   }
-
+/*
   .category,
   .category-dropdown {
     font-size: 16px;
-  }
+  }*/
 
   .dropdown-content {
     z-index: 2;
@@ -1227,7 +1228,7 @@ body {
   }
 
   .subtasks-add-task {
-    font-size: 16px;
+    /*font-size: 16px;*/
     margin-top: 5px;
   }
 

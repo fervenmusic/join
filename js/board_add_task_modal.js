@@ -294,7 +294,7 @@ function createDateInputModal(dateElement) {
  * @param {HTMLElement} dateInput - The date input element to be configured.
  */
 function configureDateInputModal(dateInput) {
-    dateInput.style.cssText = 'background-image: url("img/calendar.svg"); background-repeat: no-repeat; background-position: right center; background-size: 24px;';
+    dateInput.style.cssText = 'background-image: url("img/calendar.svg"); background-repeat: no-repeat; background-position: right center; background-size: 24px; background-position-x: calc(98%) !important;';
     dateInput.classList.add('calendar-hover');
     dateInput.addEventListener('input', handleDateInputModal);
     dateInput.addEventListener('keypress', handleKeyPressModal);
