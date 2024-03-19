@@ -433,7 +433,7 @@ body {
 .due-date-input {
   /* background-image: url(../img/event.svg) !important; */
   background-repeat: no-repeat !important;
-  background-position-x: calc(96%) !important;
+  background-position-x: calc(98%) !important;
   background-position-y: center !important;
   display: flex;
   width: 408px;
