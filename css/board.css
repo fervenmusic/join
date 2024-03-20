@@ -202,7 +202,7 @@ body {
   margin-left: 296px;
   display: flex;
   min-height: 600px;
-  padding: 0px 64px;
+  padding: 0px 20px;
   padding-left: 0;
   align-items: flex-start;
   gap: 24px;
@@ -1242,7 +1242,6 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 25px;
   align-self: stretch;
 }
 
@@ -2986,10 +2985,6 @@ body {
 
   .input-container-subtask {
     height: 45px !important;
-  }
-
-  .card-modal-date {
-    gap: 1rem;
   }
 
   .clear-and-create-section-modal,
