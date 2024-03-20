@@ -793,7 +793,7 @@ body {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 1370px){
+@media only screen and (max-width: 1385px){
     .contacts_container {
         position: absolute;
         top: 95px;

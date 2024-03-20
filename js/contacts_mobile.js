@@ -4,7 +4,7 @@
  *
  */
 
-let isMobile = window.matchMedia("only screen and (max-width: 1370px)").matches;
+let isMobile = window.matchMedia("only screen and (max-width: 1385px)").matches;
 
 let contactEntry = document.getElementById('contactentry');
 let backButton = document.querySelector('.backArrow');
@@ -88,6 +88,6 @@ handleMobileView();
  * It also updates the isMobile variable.
  */
 window.addEventListener('resize', () => {
-    isMobile = window.matchMedia("only screen and (max-width: 1370px)").matches;
+    isMobile = window.matchMedia("only screen and (max-width: 1385px)").matches;
     handleMobileView();
 });

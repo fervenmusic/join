@@ -8,7 +8,7 @@ import { editContactTemplate, addContactTemplate, add_new_conatct_btnTemplate } 
 let editcontact_innerHTML = editContactTemplate;
 let addcontact_innerHTML = addContactTemplate;
 let add_new_conatct_btn_innerHTML = add_new_conatct_btnTemplate;
-let isMobile = window.innerWidth <= 1370;
+let isMobile = window.innerWidth <= 1385;
 
 let overlay;
 let contactModal;
@@ -591,5 +591,5 @@ document.addEventListener('DOMContentLoaded', async (event) => {
  * only for mobile visible
  */
 window.addEventListener('resize', function() {
-    isMobile = window.innerWidth <= 1370;
+    isMobile = window.innerWidth <= 1385;
 });
