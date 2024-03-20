@@ -2238,6 +2238,7 @@ body {
 
   .clear-and-create-section-modal {
     margin-left: 0px;
+    right: 0;
     position: relative;
     justify-content: center;
   }
@@ -2993,7 +2994,7 @@ body {
 
   .clear-and-create-section-modal,
   .required-legend-modal {
-    margin-top: 0px;
+    margin-top: 6px;
   }
 
   .card-modal-subtasks-container-headline,
