@@ -139,10 +139,11 @@ document.addEventListener('click', function (event) {
  * @param {string} column - The column on the board where the task should be added.
  */
 async function addToBoardModal(column) {
+    
     let form = document.getElementById('taskModal');
     let taskTitle = getFieldValueById('taskTitleInput');
     let category = getFieldValueById('categoryAddTaskModal');
-/*
+
     if (!taskTitle) {
         showRequiredInfo('taskTitleInput');
         return;
@@ -151,7 +152,7 @@ async function addToBoardModal(column) {
         showRequiredInfo('categoryAddTaskModal');
         return;
     }
-  */  
+    
     if (window.location.pathname.includes("board.html") && form.checkValidity() && taskTitle && category) {
         
         let description = getFieldValueById('descriptionInput');
@@ -242,18 +243,19 @@ function closeModal() {
 }
 
 /**
- * Sets up the due date input by replacing it with a datepicker on the "Add Task" modal.
+ * Sets up the due date input by replacing it with a datepicker on the "Add Task" page.
  */
 function setupDueDateInputAddTaskModal() {
     if (window.location.pathname.includes("board.html")) {
         let dateElement = document.getElementById('dateAddTaskModal');
 
         if (dateElement) {
-            let dateInput = createAndConfigureDateInputModal(dateElement);
-            dateElement.replaceWith(createDateContainerModal(dateInput));
+            let dateInput = createAndConfigureDateInputAddTaskModal(dateElement);
+
+            dateElement.replaceWith(createDateContainerAddTaskModal(dateInput));
 
             $(dateInput).datepicker({
-                dateFormat: 'yy-mm-dd',
+                dateFormat: 'dd/mm/yy',
                 showButtonPanel: true,
                 minDate: new Date()
             });
@@ -263,25 +265,25 @@ function setupDueDateInputAddTaskModal() {
 setupDueDateInputAddTaskModal();
 
 /**
- * Creates and configures a date input element for the modal.
+ * Creates and configures a date input element.
  * @param {HTMLElement} dateElement - The existing date input element.
  * @returns {HTMLElement} The configured date input element.
  */
-function createAndConfigureDateInputModal(dateElement) {
-    let dateInput = createDateInputModal(dateElement);
-    configureDateInputModal(dateInput);
+function createAndConfigureDateInputAddTaskModal(dateElement) {
+    let dateInput = createDateInputAddTaskModal(dateElement);
+    configureDateInputAddTaskModal(dateInput);
     return dateInput;
 }
 
 /**
- * Creates a date input element for the modal.
+ * Creates a date input element.
  * @param {HTMLElement} dateElement - The existing date input element.
  * @returns {HTMLElement} The created date input element.
  */
-function createDateInputModal(dateElement) {
+function createDateInputAddTaskModal(dateElement) {
     let dateInput = document.createElement('input');
     dateInput.type = 'text';
-    dateInput.id = 'date';
+    dateInput.id = 'dateAddTaskModal';
     dateInput.className = 'due-date-input-add-task-modal';
     dateInput.placeholder = 'dd/mm/yyyy';
     dateInput.required = true;
@@ -290,57 +292,57 @@ function createDateInputModal(dateElement) {
 }
 
 /**
- * Configures the date input element for the modal.
+ * Configures the date input element.
  * @param {HTMLElement} dateInput - The date input element to be configured.
  */
-function configureDateInputModal(dateInput) {
-    dateInput.style.cssText = 'background-image: url("img/calendar.svg"); background-repeat: no-repeat; background-position: right center; background-size: 24px; background-position-x: calc(98%) !important;';
+function configureDateInputAddTaskModal(dateInput) {
+    dateInput.style.cssText = 'background-image: url("img/calendar.svg"); background-repeat: no-repeat; background-position: right center; background-size: 24px;';
     dateInput.classList.add('calendar-hover');
-    dateInput.addEventListener('input', handleDateInputModal);
-    dateInput.addEventListener('keypress', handleKeyPressModal);
+    dateInput.addEventListener('input', handleDateInputAddTaskModal);
+    dateInput.addEventListener('keypress', handleKeyPressAddTaskModal);
 }
 
 /**
- * Handles input event for the date input element in the modal.
+ * Handles input event for the date input element.
  * @param {Event} event - The input event object.
  */
-function handleDateInputModal(event) {
+function handleDateInputAddTaskModal(event) {
     let inputValue = event.target.value.replace(/\//g, '');
     let day = inputValue.slice(0, 2);
     let month = inputValue.slice(2, 4);
     let year = inputValue.slice(4, 8);
 
-    let formattedValue = formatDateStringModal(day, month, year);
+    let formattedValue = formatDateString(day, month, year);
 
     if (formattedValue !== event.target.value) {
         event.target.value = formattedValue;
     }
 
-    handleInvalidDayModal(event, day, month, year);
-    handleInvalidMonthModal(event, day, month, year);
-    handleInvalidYearModal(event, day, month, year);
+    handleInvalidDay(event, day, month, year);
+    handleInvalidMonth(event, day, month, year);
+    handleInvalidYear(event, day, month, year);
     handleDateValidity(event, day, month, year);
 }
 
 /**
- * Formats the date string for the modal.
+ * Formats the date string.
  * @param {string} day - The day part of the date.
  * @param {string} month - The month part of the date.
  * @param {string} year - The year part of the date.
  * @returns {string} The formatted date string.
  */
-function formatDateStringModal(day, month, year) {
+function formatDateString(day, month, year) {
     return day + (day.length === 2 ? '/' : '') + month + (month.length === 2 ? '/' : '') + year;
 }
 
 /**
- * Handles invalid day entry for the modal.
+ * Handles invalid day entry.
  * @param {Event} event - The input event object.
  * @param {string} day - The day part of the date.
  * @param {string} month - The month part of the date.
  * @param {string} year - The year part of the date.
  */
-function handleInvalidDayModal(event, day, month, year) {
+function handleInvalidDay(event, day, month, year) {
     if (day.length === 2 && (parseInt(day) < 1 || parseInt(day) > 31)) {
         day = '31';
         event.target.value = day + '/' + month + '' + year;
@@ -348,13 +350,13 @@ function handleInvalidDayModal(event, day, month, year) {
 }
 
 /**
- * Handles invalid month entry for the modal.
+ * Handles invalid month entry.
  * @param {Event} event - The input event object.
  * @param {string} day - The day part of the date.
  * @param {string} month - The month part of the date.
  * @param {string} year - The year part of the date.
  */
-function handleInvalidMonthModal(event, day, month, year) {
+function handleInvalidMonth(event, day, month, year) {
     if (month.length === 2 && (parseInt(month) < 1 || parseInt(month) > 12)) {
         month = '12';
         event.target.value = day + '/' + month + '/' + year;
@@ -362,13 +364,13 @@ function handleInvalidMonthModal(event, day, month, year) {
 }
 
 /**
- * Handles invalid year entry for the modal.
+ * Handles invalid year entry.
  * @param {Event} event - The input event object.
  * @param {string} day - The day part of the date.
  * @param {string} month - The month part of the date.
  * @param {string} year - The year part of the date.
  */
-function handleInvalidYearModal(event, day, month, year) {
+function handleInvalidYear(event, day, month, year) {
     if (year.length === 4 && (parseInt(year) < 1 || parseInt(year) > 2100)) {
         year = '2100';
         event.target.value = day + '/' + month + '/' + year;
@@ -376,10 +378,10 @@ function handleInvalidYearModal(event, day, month, year) {
 }
 
 /**
- * Handles key press event for the date input element in the modal.
+ * Handles key press event for the date input element.
  * @param {Event} event - The key press event object.
  */
-function handleKeyPressModal(event) {
+function handleKeyPressAddTaskModal(event) {
     if (!/[0-9\b]/.test(event.key)) {
         event.preventDefault();
     }
@@ -389,11 +391,11 @@ function handleKeyPressModal(event) {
 }
 
 /**
- * Creates a new date input container for the modal.
+ * Creates a new date input container.
  * @param {HTMLElement} dateInput - The configured date input element.
  * @returns {HTMLDivElement} The date input container.
  */
-function createDateContainerModal(dateInput) {
+function createDateContainerAddTaskModal(dateInput) {
     let dateContainer = document.createElement('div');
     dateContainer.className = 'due-date-container-add-task-modal';
     dateContainer.appendChild(dateInput);
