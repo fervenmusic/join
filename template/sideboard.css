@@ -202,14 +202,20 @@ body{
     }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 440px){
     .sidemenu_element{
         padding: 0px;
         transition: padding 0.5s ease-in-out;
-    }    
+    }
+    #summary,
+    #add-task,
+    #board,
+    #contacts {
+        width: 25%;
+    }
 
-    .selected{
-        width: 7vh;
+    .selected {
+        width: 25% !important;
         height: 10vh;
     }
 
